@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthony Kipkirui | Elite Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f2027;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:linear-gradient(45deg,#00f2ff,#4facfe,#00f2ff,#2c5364);
+    background-size:400%;
+    animation:gradientMove 15s ease infinite;
+    z-index:-2;
+    opacity:0.15;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* Floating particles */
+body::after{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/cubes.png");
+    opacity:0.05;
+    z-index:-1;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+nav h2{
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00f2ff;
+}
+
+/* Hero */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero h1 span{
+    color:#00f2ff;
+}
+
+.typing{
+    font-size:20px;
+    margin:20px 0;
+    border-right:2px solid #00f2ff;
+    width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    animation:typing 4s steps(30,end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:300px}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+.btn{
+    padding:12px 30px;
+    background:#00f2ff;
+    border-radius:30px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    box-shadow:0 0 20px #00f2ff;
+    transform:scale(1.05);
+}
+
+/* Sections */
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    color:#00f2ff;
+    margin-bottom:60px;
+}
+
+/* Glass Card */
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Skills */
+.skill{
+    margin-bottom:20px;
+}
+
+.skill-bar{
+    height:8px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-level{
+    height:100%;
+    background:#00f2ff;
+    width:0;
+    animation:loadSkill 2s forwards;
+}
+
+@keyframes loadSkill{
+    to{width:var(--level)}
+}
+
+/* Projects */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.project-card img{
+    width:100%;
+    display:block;
+}
+
+.project-overlay{
+    position:absolute;
+    bottom:-100%;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.5s;
+    text-align:center;
+    padding:20px;
+}
+
+.project-card:hover .project-overlay{
+    bottom:0;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>AK.</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Anthony <span>Kipkirui</span></h1>
+    <div class="typing">Elite Web Developer & IT Specialist</div>
+    <a href="#" class="btn">Download CV</a>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass">
+        <p>
+            Passionate IT student focused on building modern, responsive and intelligent web systems.
+            I specialize in clean UI design, front-end development and scalable web solutions.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="glass">
+        <div class="skill">
+            <p>HTML</p>
+            <div class="skill-bar"><div class="skill-level" style="--level:90%"></div></div>
+        </div>
+        <div class="skill">
+            <p>CSS</p>
+            <div class="skill-bar"><div class="skill-level" style="--level:85%"></div></div>
+        </div>
+        <div class="skill">
+            <p>JavaScript</p>
+            <div class="skill-bar"><div class="skill-level" style="--level:75%"></div></div>
+        </div>
+        <div class="skill">
+            <p>PHP & MySQL</p>
+            <div class="skill-bar"><div class="skill-level" style="--level:70%"></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+
+        <div class="project-card">
+            <img src="https://picsum.photos/400/300?1">
+            <div class="project-overlay">
+                <div>
+                    <h3>School Management System</h3>
+                    <p>Full-featured academic management platform.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="https://picsum.photos/400/300?2">
+            <div class="project-overlay">
+                <div>
+                    <h3>SmartTech Business Website</h3>
+                    <p>Modern corporate responsive website.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="https://picsum.photos/400/300?3">
+            <div class="project-overlay">
+                <div>
+                    <h3>Portfolio Dashboard</h3>
+                    <p>Admin-powered portfolio system.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="glass contact">
+        <p>Email: anthony@example.com</p>
+        <p>Phone: +254 7XX XXX XXX</p>
+        <p>Nairobi, Kenya</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Anthony Kipkirui | Elite Portfolio</p>
+</footer>
+
+</body>
+</html>
